@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Pengaturan karakter encoding untuk mendukung semua karakter Unicode -->
+    <meta charset="UTF-8">
+
+    <!-- Pengaturan viewport untuk responsivitas pada perangkat mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+      Import Font Awesome untuk ikon sosial media dan navigasi
+      Versi 6.5.1 dipilih untuk fitur dan ikon terbaru 
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- 
+      Import AOS (Animate On Scroll) library
+      Digunakan untuk membuat animasi scroll yang menarik 
+    -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Import file CSS custom untuk styling tambahan -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Portfolio Website</title>
+
+<style>
+#particles-js, #stars-canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Background Particle Canvas -->
+<div id="particles-js"></div>
+<canvas id="stars-canvas"></canvas>
+
+
+    <!-- 
+      Navigation Section
+      - Menggunakan sistem grid untuk layout
+      - Includes logo dan menu navigasi
+      - Responsive dengan hamburger menu untuk mobile 
+    -->
+    <nav>
+        <div class="nav-container">
+
+            <!-- 
+              Logo dengan animasi zoom-in
+              data-aos-duration: 1500ms untuk animasi yang smooth 
+            -->
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Alfhin <span>Hidayat</span>
+            </div>
+
+            <!-- 
+              Navigation Links
+              - Menggunakan fade-up animation dengan delays bertingkat
+              - Active class untuk halaman yang sedang aktif 
+            -->
+            <div class="links">
+                <div class="link active" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a
+                        href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a
+                        href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a
+                        href="skill.html">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a
+                        href="service.html">Service</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a
+                        href="contact.html">Contact</a></div>
+            </div>
+        </div>
+
+        <!-- 
+          Hamburger Menu Icon
+          - Muncul pada tampilan mobile
+          - Menggunakan Font Awesome icon
+          - onClick handler untuk membuka menu 
+        -->
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+
+        <!-- 
+          Dropdown Menu untuk Mobile
+          - Berisi link navigasi yang sama
+          - Muncul ketika hamburger menu diklik
+          - Includes tombol close (x) 
+        -->
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skill.html">Skills</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+      Main Content Section
+      - Menggunakan grid untuk layout dua kolom
+      - Includes teks intro dan gambar profil 
+    -->
+    <section>
+        <div class="main-container">
+            <!-- 
+              Content Container
+              - Berisi heading, typewriter effect, dan social links
+              - Setiap elemen memiliki animasi AOS yang berbeda 
+            -->
+            <div class="content">
+                <!-- Heading dengan fade-left animation -->
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey I'm <span>Alfhin</span>
+                </h1>
+
+                <!-- 
+                  Typewriter Effect
+                  - Menggunakan JavaScript untuk animasi ketik
+                  - Fade-right animation untuk container 
+                -->
+                <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" class="typewriter">I'm a <span
+                        class="typewriter-text"></span><label for="">|</label></div>
+
+                <!-- Paragraf deskripsi dengan flip-down animation -->
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">Lorem ipsum dolor sit, amet
+                    consectetur adipisicing elit. Ut fuga officiis corrupti tempora, sapiente a quae alias suscipit
+                    ratione? Eaque obcaecati a ea accusamus sint dignissimos delectus maxime porro tempore!</p>
+
+                <!-- 
+                  Social Media Links
+                  - Menggunakan Font Awesome icons
+                  - Fade-up animation dengan delays bertingkat 
+                -->
+                <div class="social-links">
+    <a href="#" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/Fhynn" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400">
+        <i class="fa-brands fa-github"></i>
+    </a>
+    <a href="#" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://twitter.com/Rii_zehpryn" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600">
+        <i class="fa-brands fa-twitter"></i>
+    </a>
+</div>
+
+
+                <!-- 
+                  - Zoom-out animation dengan delay terpanjang
+                  - Styling didefinisikan di CSS 
+                -->
+                <div class="btn" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1800">
+                    <button>ABOUT ME</button>
+                </div>
+            </div>
+
+            <!-- 
+              Image Container
+              - Menggunakan zoom-in animation
+              - Durasi lebih panjang (3000ms) untuk efek dramatic 
+            -->
+            <div class="image" data-aos="zoom-in" data-aos-duration="3000">
+  <img src="img/zoro.jpg" alt="">
+  <div class="particles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+    <!-- 
+      Script Imports
+      - AOS library untuk animasi
+      - Custom JavaScript untuk fungsionalitas tambahan 
+    -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS dengan offset 0 untuk trigger tepat waktu
+        AOS.init({ offset: 0, });
+    </script>
+    <script src="./js/script.js"></script>
+
+<audio autoplay hidden>
+  <source src="lagu.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<h1 class="typewriter-text" style="text-align:center; font-size:2em; margin-top:20px;"></h1>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60, density: { enable: true, value_area: 800 } },
+    color: { value: "#00ffcc" },
+    shape: { type: "circle" },
+    opacity: { value: 0.3 },
+    size: { value: 3, random: true },
+    line_linked: {
+      enable: true, distance: 120,
+      color: "#00ffcc", opacity: 0.4, width: 1
+    },
+    move: { enable: true, speed: 1.5 }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" }
+    },
+    modes: {
+      repulse: { distance: 100, duration: 0.4 },
+      push: { particles_nb: 2 }
+    }
+  },
+  retina_detect: true
+});
+</script>
+
+<!-- Falling Stars Canvas Script -->
+<script>
+const canvas = document.getElementById("stars-canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+
+for (let i = 0; i < 20; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    len: Math.random() * 80 + 10,
+    speed: Math.random() * 2 + 0.5
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = "#ffffff";
+  ctx.lineWidth = 1;
+  for (let star of stars) {
+    ctx.beginPath();
+    ctx.moveTo(star.x, star.y);
+    ctx.lineTo(star.x + star.len, star.y + star.len);
+    ctx.stroke();
+    star.x += star.speed;
+    star.y += star.speed;
+    if (star.x > canvas.width || star.y > canvas.height) {
+      star.x = Math.random() * canvas.width;
+      star.y = -100;
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+
+</html>
